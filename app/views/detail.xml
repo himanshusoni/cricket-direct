@@ -1,0 +1,6 @@
+<Alloy>
+    <Window id="win">
+        <ScrollView id="detailList" class="container">
+        </ScrollView>
+    </Window>
+</Alloy>

@@ -1,0 +1,64 @@
+<Alloy>
+    <Collection src="matches"/>
+    <Collection src="teams"/>
+    <TabGroup>
+        <Tab id="matchesTab" title="Matches" icon="KS_nav_ui.png">
+            <Window title="Matches">
+                <ListView id='matchesTable' defaultItemTemplate="matchItem" onItemclick="selectMatch">
+                    <Templates>
+                        <ItemTemplate bindId="matchItem" name="matchItem" id="matchRow" height="80">
+                            <View layout = 'vertical'>
+                                <Label bindId="heading" id="heading"/>
+                                <Label bindId="subheading" id="subheading"/>
+                            </View>
+                        </ItemTemplate>
+                    </Templates>
+                    <ListSection id="matchesSection" dataCollection="matches">
+                        <ListItem
+                        template="matchItem"
+                        matchItem:id="{matchid}"
+                        heading:text="{series_name}"
+                        subheading:text="{StartDate}"></ListItem>
+                    </ListSection>
+                </ListView>
+            </Window>
+        </Tab>
+        <Tab id="teamsTab" title="Teams" icon="KS_nav_views.png">
+            <Window title="Teams">
+                <ListView id='teamTable' defaultItemTemplate="teamItem" onItemclick="selectTeam">
+                    <Templates>
+                        <ItemTemplate bindId="teamItem" name="teamItem" id="teamRow" height="60">
+                            <ImageView bindId="leftImage" id="leftImage"/>
+                            <View left="60" class="divider vertical"/>
+                            <View class='center'>
+                                <Label bindId="heading" id="heading"/>
+                                <Label bindId="subheading" id="subheading"/>
+                            </View>
+                            <View right="60" class="divider vertical"/>
+                            <ImageView bindId="rightImage" id="rightImage"/>
+                        </ItemTemplate>
+                    </Templates>
+                    <ListSection id="teamSection" dataCollection="teams">
+                        <HeaderView>
+                            <View layout='vertical'>
+                                <View top="0" class="divider horizontal"/>
+                                <View height="Ti.UI.SIZE">
+                                    <Label right='5'>Nation</Label>
+                                    <Label left='5'>Team</Label>
+                                </View>
+                                <View bottom="0" class="divider horizontal"/>
+                            </View>
+                        </HeaderView>
+                        <ListItem
+                        template="teamItem"
+                        teamItem:id = "{id}"
+                        leftImage:image="{TeamLogoPath}"
+                        heading:text="{TeamName}"
+                        subheading:text="{TeamType}"
+                        rightImage:image="{TeamFlagPath}"></ListItem>
+                    </ListSection>
+                </ListView>
+            </Window>
+        </Tab>
+    </TabGroup>
+</Alloy>
