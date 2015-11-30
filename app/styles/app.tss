@@ -31,3 +31,20 @@ overrode the settings with other TSS, XML, or JS settings:
 		color: 'black'
 	}
 }
+
+// --- DIVIDER ---
+".divider" : {
+	backgroundColor : '#aaaaaa',
+}
+
+".vertical" : {
+	height : Titanium.UI.FILL,
+	width : 1,
+}
+
+".horizontal" : {
+	width : Titanium.UI.FILL,
+	height : 1,
+}
+
+// --- DIVIDER --- //

@@ -1,0 +1,52 @@
+
+".container" : {
+  layout : 'vertical'
+}
+
+".heading":{
+	left : 5,
+	right : 5,
+	font: {
+		fontSize: 16,
+		fontWeight: 'bold'
+	}
+}
+
+".subheading":{
+	
+}
+
+"Label" : {
+	top : 5,
+	bottom : 5,
+	height : Ti.UI.SIZE
+}
+
+"#matchImages" :{
+	height : 100,
+	width : 100,
+}
+
+"#teamNames":{
+	bottom : 5,
+	height : Ti.UI.SIZE,
+	width : Ti.UI.FILL,
+	layout : 'horizontal'
+}
+
+".teamItem":{
+	width : "49%",
+	height : Ti.UI.SIZE
+}
+
+".teamName":{
+	// bottom : 10,
+	// width : '49%',
+	textAlign : Titanium.UI.TEXT_ALIGNMENT_CENTER
+}
+
+".teamImage":{
+	top : 30,
+	width : 80,
+	height : 60,
+}

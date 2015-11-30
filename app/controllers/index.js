@@ -11,10 +11,10 @@ var matchesRequest = {
     },
     // it is weird that console.log is not working in ios and hence causing the application to crash
     // success : function(e){
-        // console.log("SUCCESS", e);
+    // console.log("SUCCESS", e);
     // },
     // error : function(e){
-        // console.log("ERROR", e);
+    // console.log("ERROR", e);
     // }
 };
 
@@ -28,10 +28,10 @@ var teamsRequest = {
         env : "store://0TxIGQMQbObzvU4Apia0V0"
     },
     // success : function(e){
-        // console.log("SUCCESS", e);
+    // console.log("SUCCESS", e);
     // },
     // error : function(e){
-        // console.log("ERROR", e);
+    // console.log("ERROR", e);
     // }
 };
 
@@ -40,6 +40,9 @@ $.index.open();
 myMatches.fetch(matchesRequest);
 myTeams.fetch(teamsRequest);
 
+/**
+ * Without using Alloy MVC binding
+ */
 /*
 function loadMatchesTable() {
     var httpClient = Titanium.Network.createHTTPClient();
@@ -137,16 +140,33 @@ var init = function() {
 init();
 */
 
-function selectMatch(e){
+function selectMatch(e) {
     var item = e.section.getItemAt(e.itemIndex);
-    console.log(item);
+    match = myMatches.get(item.matchItem.id);
+
+    var findTeam = function(param) {
+            // cannot use Collection.findWhere, since this is not available in backbone collection < 1.0.0
+            // alloy uses 0.9.2,
+            // adding in config.json "backbone": "1.1.2" to explicity use 1.1.2
+            return myTeams.findWhere({
+                'TeamName' : param
+            });
+            // return team ? team[0] : '';
+        };
+
     select({
+        detail : 'match',
         parentTab : $.matchesTab,
-        data : myMatches.get(item.matchItem.id)
+        // use the teams collections to get team info for the match
+        TeamDetails : [
+            findTeam(match.attributes.Team[0].Team),
+            findTeam(match.attributes.Team[1].Team)
+           ],
+        data : match
     });
 }
 
-function selectTeam(e){
+function selectTeam(e) {
     var item = e.section.getItemAt(e.itemIndex);
     select({
         parentTab : $.teamsTab,
@@ -154,8 +174,8 @@ function selectTeam(e){
     });
 }
 
-function select(args){
-    detailController = Alloy.createController('detail', args);
+function select(args) {
+    detailController = Alloy.createController(args.detail ? 'matchDetail' : 'detail', args);
     args.parentTab.open(detailController.getView());
 }
 

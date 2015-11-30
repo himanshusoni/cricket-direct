@@ -25,20 +25,6 @@
 	separatorHeight : 1
 }
 
-".divider" : {
-	backgroundColor : '#aaaaaa',
-}
-
-".vertical" : {
-	height : Titanium.UI.FILL,
-	width : 1,
-}
-
-".horizontal" : {
-	width : Titanium.UI.FILL,
-	height : 1,
-}
-
 "#leftImage": {
 	left: 6,
 	top: 6,

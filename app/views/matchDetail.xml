@@ -1,0 +1,29 @@
+<Alloy>
+    <Model src="matches" id="matchDetail"/>
+    <Window id="win" model="matches">
+        <ScrollView class="container">
+            <Label class="heading" text="{matches.series_name}"/>
+            <Label class="subheading" text="{matches.matchVenue}"></Label>
+            <View top="5" bottom="5" class="divider horizontal"/>
+            <View id="teamNames">
+                <View class="teamItem">
+                    <Label class="teamName" text="{matches.teamName1}"></Label>
+                    <ImageView class="teamImage" image="{matches.TeamLogoPath1}"></ImageView>
+                </View>
+                <View left="1%" class="teamItem">
+                    <Label class="teamName" text="{matches.teamName2}"></Label>
+                    <ImageView class="teamImage" image="{matches.TeamLogoPath2}"></ImageView>
+                    <!-- TODO <Images></Images>
+                    whats this ? -->
+                </View>
+            </View>
+            <View top="5" bottom="5" class="divider horizontal"/>
+            <Label>Team Photos go here</Label>
+            <ImageView id="matchImages"></ImageView>
+            <View top="5" bottom="5" class="divider horizontal"/>
+            <View height="200" backgroundColor="red">
+                <Label>Twitter and news here</Label>
+            </View> 
+        </ScrollView>
+    </Window>
+</Alloy>

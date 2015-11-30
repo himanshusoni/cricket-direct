@@ -15,6 +15,8 @@ exports.definition = {
     extendModel: function(Model) {
         _.extend(Model.prototype, {
             // extended functions and properties go here
+            
+            // add matchVenueId and matchVenueContent
         });
 
         return Model;
