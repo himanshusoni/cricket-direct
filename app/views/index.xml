@@ -13,12 +13,14 @@
                             </View>
                         </ItemTemplate>
                     </Templates>
+                    <SearchBar></SearchBar>
                     <ListSection id="matchesSection" dataCollection="matches">
                         <ListItem
                         template="matchItem"
                         matchItem:id="{matchid}"
                         heading:text="{series_name}"
-                        subheading:text="{StartDate}"></ListItem>
+                        subheading:text="{StartDate}"
+                        searchableText="{series_name}"></ListItem>
                     </ListSection>
                 </ListView>
             </Window>
@@ -38,9 +40,10 @@
                             <ImageView bindId="rightImage" id="rightImage"/>
                         </ItemTemplate>
                     </Templates>
+                    <SearchBar></SearchBar>
                     <ListSection id="teamSection" dataCollection="teams">
                         <HeaderView>
-                            <View layout='vertical'>
+                            <View layout='vertical' backgroundColor="#fff">
                                 <View top="0" class="divider horizontal"/>
                                 <View height="Ti.UI.SIZE">
                                     <Label right='5'>Nation</Label>
@@ -55,7 +58,8 @@
                         leftImage:image="{TeamLogoPath}"
                         heading:text="{TeamName}"
                         subheading:text="{TeamType}"
-                        rightImage:image="{TeamFlagPath}"></ListItem>
+                        rightImage:image="{TeamFlagPath}"
+                        searchableText="{TeamName}"></ListItem>
                     </ListSection>
                 </ListView>
             </Window>
