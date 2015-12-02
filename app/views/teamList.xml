@@ -16,6 +16,7 @@
                     </ItemTemplate>
                 </Templates>
                 <SearchBar></SearchBar>
+                <!-- <SearchView ns="Ti.UI.Android" platform="android" hintText="Table Search"/> -->
                 <ListSection id="teamSection" dataCollection="teams">
                     <HeaderView>
                         <View layout='vertical' backgroundColor="#fff">

@@ -28,3 +28,30 @@ $.win.addEventListener('open', function(e) {
         };
     }
 });
+
+// merge results.PhotoAlbum[each].Photos[each], get first 20 for initial test.
+var photoAlbum = Alloy.Collections.photoAlbums;
+var albumRequest = {
+    // requestMethod : 'POST',
+    data : {
+        q : "select * from cricket.photos where region = \"India\"",
+        format : "json",
+        diagnostics : "true",
+        env : "store://0TxIGQMQbObzvU4Apia0V0"
+    },
+    // it is weird that console.log is not working in ios and hence causing the application to crash
+    // success : function(e){
+    // console.log("SUCCESS", e);
+    // },
+    // error : function(e){
+    // console.log("ERROR", e);
+    // }
+};
+
+// if(photoAlbum && photoAlbum.length == 0)
+    photoAlbum.fetch(albumRequest);
+    
+function cleanup(e) {
+    $.destroy();
+}
+

@@ -1,6 +1,7 @@
 <Alloy>
+    <Collection src="photoAlbums"/>
     <Model src="matches" id="matchDetail"/>
-    <Window id="win" model="matches">
+    <Window id="win" model="matches" onClose="cleanup">
         <ScrollView class="container">
             <Label class="heading" text="{matches.series_name}"/>
             <Label class="subheading" text="{matches.matchVenue}"></Label>
@@ -19,7 +20,12 @@
             </View>
             <View top="5" bottom="5" class="divider horizontal"/>
             <Label>Team Photos go here</Label>
-            <ImageView id="matchImages"></ImageView>
+            <ScrollView id="matchImages" dataCollection="photoAlbums">
+                <View width="150">
+                    <ImageView class='padding' image="{PhotoURL}"></ImageView>
+                </View>
+            </ScrollView>
+            <!-- <ImageView ></ImageView> -->
             <View top="5" bottom="5" class="divider horizontal"/>
             <View height="200" backgroundColor="red">
                 <Label>Twitter and news here</Label>

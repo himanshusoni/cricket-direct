@@ -19,13 +19,3 @@
 	textAlign: 'center'
 }
 */
-
-"ListView":{
-	separatorColor : '#aaaaaa',
-	separatorHeight : 1
-}
-
-"Label":{
-	// left: 60,
-	color: 'black'
-}

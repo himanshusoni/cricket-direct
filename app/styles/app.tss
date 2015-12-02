@@ -48,3 +48,13 @@ overrode the settings with other TSS, XML, or JS settings:
 }
 
 // --- DIVIDER --- //
+
+"ListView":{
+	separatorColor : '#aaaaaa',
+	separatorHeight : 1
+}
+
+"Label":{
+	// left: 60,
+	color: 'black'
+}
