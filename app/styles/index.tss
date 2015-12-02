@@ -25,44 +25,7 @@
 	separatorHeight : 1
 }
 
-"#leftImage": {
-	left: 6,
-	top: 6,
-	width: 48,
-	height: 48
-}
-".center" : {
-	left : 65,
-	right : 65,
-	layout : 'vertical',
-	// width : Ti.UI.FILL,
-	height : Ti.UI.FILL
-}
-"#rightImage": {
-	right: 6,
-	top: 6,
-	width: 48,
-	height: 48
-}
 "Label":{
 	// left: 60,
 	color: 'black'
-}
-"#heading": {
-	left : 5,
-	top: 5,
-	color : '#00aeef',
-	font: {
-		fontSize: 16,
-		fontWeight: 'bold'
-	}
-}
-"#subheading": {
-	left : 5,
-	// top: 5,
-	minimumFontSize : 10,
-	font: {
-		fontSize: 12,
-		fontFamily: 'Helvetica Neue'
-	}
 }

@@ -1,0 +1,26 @@
+<Alloy>
+    <Collection src="matches"/>
+    <Tab id="matchesTab" title="Matches" icon="KS_nav_ui.png">
+        <Window title="Matches">
+            <ListView id='matchesTable' defaultItemTemplate="matchItem" onItemclick="selectMatch">
+                <Templates>
+                    <ItemTemplate bindId="matchItem" name="matchItem" id="matchRow" height="80">
+                        <View layout = 'vertical'>
+                            <Label bindId="heading" id="heading"/>
+                            <Label bindId="subheading" id="subheading"/>
+                        </View>
+                    </ItemTemplate>
+                </Templates>
+                <SearchBar></SearchBar>
+                <ListSection id="matchesSection" dataCollection="matches">
+                    <ListItem
+                    template="matchItem"
+                    matchItem:id="{matchid}"
+                    heading:text="{series_name}"
+                    subheading:text="{StartDate}"
+                    searchableText="{series_name}"></ListItem>
+                </ListSection>
+            </ListView>
+        </Window>
+    </Tab>
+</Alloy>

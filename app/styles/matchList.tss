@@ -1,0 +1,24 @@
+
+".container" : {
+  
+}
+
+
+"#heading": {
+	left : 5,
+	top: 5,
+	color : '#00aeef',
+	font: {
+		fontSize: 16,
+		fontWeight: 'bold'
+	}
+}
+"#subheading": {
+	left : 5,
+	// top: 5,
+	minimumFontSize : 10,
+	font: {
+		fontSize: 12,
+		fontFamily: 'Helvetica Neue'
+	}
+}
